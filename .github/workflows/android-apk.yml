@@ -16,7 +16,6 @@ jobs:
         run: |
           sed -i 's|output: "export",|output: "export",\n  trailingSlash: true,|' next.config.ts
           npm ci
-          rm -rf public/press
           NEXT_PUBLIC_ONLINE_API= npm run build
           cat > capacitor.config.json <<'EOF'
           {
